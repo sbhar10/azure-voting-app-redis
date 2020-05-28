@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: sbharazurevotingappredis 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sbharazurevotingappredis 
+    spec:
+      containers:
+        - name: sbharazurevotingappredis 
+          image: sbcontainerreg.azurecr.io/sbharazurevotingappredis
+          ports:
+          - containerPort: 80
